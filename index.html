@@ -1,0 +1,959 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Asia Mims-Johnson — Class of 2026</title>
+<meta name="description" content="Celebrating Asia Mims-Johnson's graduation — Associate degrees in Business, Economics, and Liberal Arts.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600;1,700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+  /* ============================================
+     DESIGN TOKENS — edit these to re-theme the site
+     ============================================ */
+  :root{
+    --navy-deep:   #0B1526;
+    --navy-mid:    #13233D;
+    --navy-line:   #24344F;
+    --gold:        #C6A15B;
+    --gold-soft:   #E8D9B5;
+    --cream:       #F7F3EA;
+    --cream-2:     #F1ECDF;
+    --ink:         #1B1B18;
+    --muted:       #8B8574;
+    --white:       #FDFCF9;
+
+    --serif:  'Playfair Display', Georgia, serif;
+    --body:   'Cormorant Garamond', Georgia, serif;
+    --sans:   'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+
+    --max-w: 1280px;
+    --edge: clamp(20px, 5vw, 72px);
+  }
+
+  *{ box-sizing:border-box; margin:0; padding:0; }
+  html{ scroll-behavior:smooth; }
+  body{
+    background:var(--cream);
+    color:var(--ink);
+    font-family:var(--sans);
+    line-height:1.5;
+    -webkit-font-smoothing:antialiased;
+  }
+  img{ max-width:100%; display:block; }
+  a{ color:inherit; }
+  section{ position:relative; }
+  .wrap{ max-width:var(--max-w); margin:0 auto; padding-left:var(--edge); padding-right:var(--edge); }
+
+  ::selection{ background:var(--gold); color:var(--navy-deep); }
+
+  :focus-visible{
+    outline:2px solid var(--gold);
+    outline-offset:3px;
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    *{ animation-duration:0.001ms !important; animation-iteration-count:1 !important; transition-duration:0.001ms !important; scroll-behavior:auto !important; }
+  }
+
+  /* ============================================
+     NAV
+     ============================================ */
+  .nav{
+    position:fixed; top:0; left:0; right:0; z-index:100;
+    display:flex; align-items:center; justify-content:space-between;
+    padding:22px var(--edge);
+    background:linear-gradient(to bottom, rgba(11,21,38,0.75), transparent);
+    transition:background .4s ease, padding .4s ease;
+  }
+  .nav.scrolled{
+    background:rgba(11,21,38,0.92);
+    backdrop-filter:blur(10px);
+    padding:14px var(--edge);
+    box-shadow:0 1px 0 rgba(198,161,91,0.25);
+  }
+  .nav__name{
+    font-family:var(--serif); font-style:italic; font-weight:600;
+    font-size:1.05rem; color:var(--white); letter-spacing:.02em;
+  }
+  .nav__links{ display:flex; gap:clamp(14px,3vw,32px); list-style:none; }
+  .nav__links a{
+    color:var(--gold-soft); text-decoration:none; font-size:.78rem;
+    letter-spacing:.14em; text-transform:uppercase; font-weight:500;
+    padding-bottom:4px; border-bottom:1px solid transparent;
+    transition:border-color .25s ease, color .25s ease;
+  }
+  .nav__links a:hover{ border-color:var(--gold); color:var(--white); }
+  .nav__toggle{ display:none; }
+
+  @media (max-width:720px){
+    .nav__links{
+      position:fixed; inset:0 0 0 auto; height:100vh; width:min(78vw,320px);
+      background:var(--navy-deep); flex-direction:column; justify-content:center;
+      gap:28px; padding:0 40px;
+      transform:translateX(100%); transition:transform .4s ease;
+    }
+    .nav__links.open{ transform:translateX(0); }
+    .nav__toggle{
+      display:flex; flex-direction:column; gap:5px; background:none; border:none;
+      cursor:pointer; z-index:110; padding:6px;
+    }
+    .nav__toggle span{ width:24px; height:2px; background:var(--gold-soft); display:block; }
+  }
+
+  /* ============================================
+     HERO
+     ============================================ */
+  .hero{
+    height:100vh; min-height:640px; position:relative;
+    display:flex; align-items:flex-end;
+    color:var(--white); overflow:hidden;
+  }
+  .hero__img{
+    position:absolute; inset:0; width:100%; height:100%; object-fit:cover;
+    object-position:center 22%;
+    animation:heroZoom 18s ease-out forwards;
+  }
+  @keyframes heroZoom{ from{ transform:scale(1.08);} to{ transform:scale(1);} }
+  .hero::after{
+    content:''; position:absolute; inset:0;
+    background:linear-gradient(180deg, rgba(11,21,38,.15) 0%, rgba(11,21,38,.25) 40%, rgba(11,21,38,.92) 100%);
+  }
+  .hero__content{
+    position:relative; z-index:2; width:100%;
+    padding:0 var(--edge) clamp(48px,7vw,84px);
+    text-align:center;
+  }
+  .hero__eyebrow{
+    font-family:var(--sans); font-size:.78rem; letter-spacing:.35em;
+    text-transform:uppercase; color:var(--gold-soft); margin-bottom:18px;
+    opacity:0; animation:fadeUp .9s ease .3s forwards;
+  }
+  .hero__name{
+    font-family:var(--serif); font-style:italic; font-weight:600;
+    font-size:clamp(2.6rem, 7vw, 5.4rem); line-height:1.05;
+    margin-bottom:20px;
+    opacity:0; animation:fadeUp .9s ease .5s forwards;
+  }
+  .hero__degrees{
+    font-family:var(--sans); font-size:clamp(.68rem,1.4vw,.86rem);
+    letter-spacing:.28em; text-transform:uppercase; color:var(--cream);
+    display:flex; align-items:center; justify-content:center; gap:16px;
+    flex-wrap:wrap; margin-bottom:8px;
+    opacity:0; animation:fadeUp .9s ease .7s forwards;
+  }
+  .hero__degrees .dot{ color:var(--gold); }
+  .hero__rule{
+    width:64px; height:1px; background:var(--gold); margin:22px auto 0;
+    opacity:0; animation:fadeUp .9s ease .9s forwards;
+  }
+  @keyframes fadeUp{ from{opacity:0; transform:translateY(16px);} to{opacity:1; transform:translateY(0);} }
+
+  .scroll-cue{
+    position:absolute; bottom:22px; left:50%; transform:translateX(-50%);
+    z-index:2; width:1px; height:46px; background:linear-gradient(var(--gold), transparent);
+    opacity:.8;
+  }
+  .scroll-cue::after{
+    content:''; position:absolute; top:0; left:50%; width:5px; height:5px;
+    background:var(--gold); border-radius:50%; transform:translateX(-50%);
+    animation:scrollDot 2s ease-in-out infinite;
+  }
+  @keyframes scrollDot{ 0%{ top:0; opacity:1;} 90%{opacity:0;} 100%{ top:42px; opacity:0;} }
+
+  /* ============================================
+     INTRO
+     ============================================ */
+  .intro{ background:var(--cream); padding:clamp(64px,10vw,120px) 0 clamp(40px,6vw,72px); }
+  .intro__inner{ max-width:760px; margin:0 auto; text-align:center; }
+  .kicker{
+    font-family:var(--sans); font-size:.75rem; letter-spacing:.3em; text-transform:uppercase;
+    color:var(--muted); display:flex; align-items:center; justify-content:center; gap:14px; margin-bottom:22px;
+  }
+  .kicker::before, .kicker::after{ content:''; height:1px; width:32px; background:var(--muted); opacity:.5; }
+  .intro p{
+    font-family:var(--body); font-size:clamp(1.15rem,2.2vw,1.5rem); line-height:1.65;
+    color:var(--ink); font-weight:500;
+  }
+  .intro p + p{ margin-top:1.2em; }
+  .intro em{ font-style:italic; color:var(--navy-mid); }
+
+  /* ============================================
+     JOURNEY — vertical-label two-up sections
+     ============================================ */
+  .journey{ background:var(--cream); padding:clamp(40px,6vw,60px) 0 clamp(80px,10vw,120px); }
+  .journey-block{
+    display:grid; grid-template-columns:96px 1fr; gap:clamp(20px,4vw,48px);
+    max-width:920px; margin:0 auto; align-items:stretch;
+  }
+  .journey-block + .journey-block{ margin-top:clamp(56px,8vw,96px); }
+  .journey-block.reverse{ grid-template-columns:1fr 96px; }
+  .journey-block.reverse .vlabel{ order:2; }
+  .journey-block.reverse .jcontent{ order:1; }
+
+  .vlabel{
+    display:flex; align-items:center; justify-content:center;
+    border-left:1px solid var(--navy-line); position:relative;
+  }
+  .journey-block.reverse .vlabel{ border-left:none; border-right:1px solid var(--navy-line); }
+  .vlabel span{
+    writing-mode:vertical-rl; transform:rotate(180deg);
+    font-family:var(--serif); font-style:italic; font-weight:600;
+    font-size:clamp(1.3rem,2.4vw,1.7rem); letter-spacing:.06em;
+    color:var(--navy-mid); white-space:nowrap;
+  }
+  .jcontent{ padding:8px 0; }
+  .jcontent h3{
+    font-family:var(--sans); font-size:.72rem; letter-spacing:.24em; text-transform:uppercase;
+    color:var(--gold); margin-bottom:.85em; font-weight:600;
+  }
+  .jcontent p{
+    font-family:var(--body); font-size:clamp(1.05rem,1.8vw,1.25rem); line-height:1.75;
+    color:var(--ink);
+  }
+
+  /* ============================================
+     GALLERY — asymmetrical grid + hover reveal
+     ============================================ */
+  .gallery{ background:var(--navy-deep); padding:clamp(70px,9vw,110px) 0; }
+  .gallery .section-head{ text-align:center; margin-bottom:clamp(40px,6vw,64px); }
+  .gallery .section-head .kicker{ color:var(--gold-soft); }
+  .gallery .section-head .kicker::before, .gallery .section-head .kicker::after{ background:var(--gold-soft); }
+  .gallery .section-head h2{
+    font-family:var(--serif); font-style:italic; font-weight:600;
+    color:var(--white); font-size:clamp(1.8rem,4vw,2.6rem);
+  }
+
+  .grid{
+    display:grid;
+    grid-template-columns:repeat(6, 1fr);
+    grid-auto-rows:130px;
+    gap:10px;
+    max-width:var(--max-w); margin:0 auto;
+  }
+  .cell{
+    position:relative; overflow:hidden; border-radius:2px;
+    grid-column:span 3; grid-row:span 2;
+    cursor:zoom-in;
+  }
+  .cell img{
+    width:100%; height:100%; object-fit:cover;
+    transition:transform .8s ease, filter .6s ease;
+    filter:blur(0px) brightness(1);
+  }
+  .cell:hover img, .cell:focus-visible img{ transform:scale(1.08); filter:blur(7px) brightness(.5); }
+  .cell--a{ grid-column:span 3; grid-row:span 3; }
+  .cell--b{ grid-column:span 3; grid-row:span 2; }
+  .cell--c{ grid-column:span 2; grid-row:span 2; }
+  .cell--d{ grid-column:span 4; grid-row:span 2; }
+  .cell--e{ grid-column:span 2; grid-row:span 2; }
+  .cell--f{ grid-column:span 2; grid-row:span 2; }
+  .cell--g{ grid-column:span 3; grid-row:span 3; }
+  .cell--h{ grid-column:span 3; grid-row:span 2; }
+
+  .cell__overlay{
+    position:absolute; inset:0;
+    display:flex; flex-direction:column; align-items:center; justify-content:center;
+    text-align:center; padding:26px;
+    opacity:0; transition:opacity .5s ease;
+  }
+  .cell:hover .cell__overlay, .cell:focus-visible .cell__overlay{ opacity:1; }
+  .cell__rule{ width:30px; height:1px; background:var(--gold); margin-bottom:14px; }
+  .cell__title{
+    font-family:var(--serif); font-style:italic; color:var(--white);
+    font-size:1.25rem; margin-bottom:10px;
+  }
+  .cell__cap{
+    font-family:var(--body); color:var(--cream); font-size:1rem;
+    line-height:1.55; max-width:32ch;
+  }
+  .cell__zoom{
+    margin-top:16px; font-family:var(--sans); font-size:.68rem; letter-spacing:.18em;
+    text-transform:uppercase; color:var(--gold-soft); opacity:.85;
+  }
+
+  @media (max-width:860px){
+    .grid{ grid-template-columns:repeat(4,1fr); grid-auto-rows:110px; }
+    .cell, .cell--a, .cell--b, .cell--c, .cell--d, .cell--e, .cell--f, .cell--g, .cell--h{
+      grid-column:span 2; grid-row:span 2;
+    }
+  }
+  @media (max-width:480px){
+    .grid{ grid-template-columns:repeat(2,1fr); }
+    .cell, .cell--a, .cell--b, .cell--c, .cell--d, .cell--e, .cell--f, .cell--g, .cell--h{
+      grid-column:span 1; grid-row:span 2;
+    }
+    .cell img{ filter:brightness(.65); }
+    .cell__overlay{ opacity:1; background:linear-gradient(190deg, rgba(11,21,38,0) 30%, rgba(11,21,38,.85) 100%); justify-content:flex-end; }
+    .cell__cap{ font-size:.88rem; }
+  }
+
+  /* ============================================
+     LIGHTBOX — click any gallery photo to enlarge
+     ============================================ */
+  .lightbox{
+    position:fixed; inset:0; z-index:1000;
+    background:rgba(6,10,18,.94);
+    display:flex; align-items:center; justify-content:center;
+    padding:5vw;
+    opacity:0; pointer-events:none;
+    transition:opacity .35s ease;
+  }
+  .lightbox.open{ opacity:1; pointer-events:auto; }
+  .lightbox img{
+    max-width:100%; max-height:88vh; width:auto; height:auto;
+    box-shadow:0 30px 80px -20px rgba(0,0,0,.6);
+    transform:scale(.96); transition:transform .35s ease;
+  }
+  .lightbox.open img{ transform:scale(1); }
+  .lightbox__close{
+    position:absolute; top:22px; right:clamp(20px,4vw,48px);
+    background:none; border:1px solid rgba(232,217,181,.4); color:var(--gold-soft);
+    width:42px; height:42px; border-radius:50%; font-size:1.4rem; line-height:1;
+    cursor:pointer; display:flex; align-items:center; justify-content:center;
+    transition:border-color .25s ease, color .25s ease;
+  }
+  .lightbox__close:hover{ border-color:var(--gold); color:var(--white); }
+
+  .lightbox__nav{
+    position:absolute; top:50%; transform:translateY(-50%);
+    background:none; border:1px solid rgba(232,217,181,.35); color:var(--gold-soft);
+    width:48px; height:48px; border-radius:50%; font-size:1.3rem; line-height:1;
+    cursor:pointer; display:flex; align-items:center; justify-content:center;
+    transition:border-color .25s ease, color .25s ease, background .25s ease;
+  }
+  .lightbox__nav:hover{ border-color:var(--gold); color:var(--white); background:rgba(198,161,91,.12); }
+  .lightbox__nav--prev{ left:clamp(10px,3vw,36px); }
+  .lightbox__nav--next{ right:clamp(10px,3vw,36px); }
+  .lightbox__counter{
+    position:absolute; bottom:22px; left:50%; transform:translateX(-50%);
+    font-family:var(--sans); font-size:.72rem; letter-spacing:.14em; color:var(--muted);
+  }
+  .lightbox__caption{
+    position:absolute; bottom:54px; left:50%; transform:translateX(-50%);
+    font-family:var(--serif); font-style:italic; color:var(--gold-soft); font-size:1.05rem;
+    text-align:center; max-width:70vw;
+  }
+  @media (max-width:640px){
+    .lightbox__nav{ width:38px; height:38px; font-size:1.1rem; }
+    .lightbox__caption{ font-size:.9rem; bottom:46px; }
+  }
+
+  /* ============================================
+     SUPPORT — progress bar + carousel
+     ============================================ */
+  .support{ background:var(--navy-mid); padding:clamp(70px,9vw,110px) 0; color:var(--white); }
+  .support__grid{
+    display:grid; grid-template-columns:1.1fr .9fr; gap:clamp(32px,5vw,64px);
+    max-width:var(--max-w); margin:0 auto; align-items:center;
+  }
+  @media (max-width:860px){ .support__grid{ grid-template-columns:1fr; } }
+
+  .support__eyebrow{ color:var(--gold-soft); }
+  .support__eyebrow::before, .support__eyebrow::after{ background:var(--gold-soft); }
+  .support h2{
+    font-family:var(--serif); font-style:italic; font-weight:600;
+    font-size:clamp(1.7rem,3.6vw,2.3rem); margin-bottom:16px;
+  }
+  .support > .support-copy p{
+    font-family:var(--body); font-size:1.15rem; color:var(--cream); opacity:.85;
+    max-width:480px; margin-bottom:34px;
+  }
+
+  .progress-labels{
+    display:flex; justify-content:space-between; align-items:baseline;
+    margin-bottom:12px; font-family:var(--sans);
+  }
+  .progress-labels .raised{ font-size:1.6rem; font-weight:700; color:var(--white); font-family:var(--serif); font-style:italic; }
+  .progress-labels .raised span{ color:var(--gold); font-style:normal; font-size:.9rem; font-weight:500; margin-left:6px; }
+  .progress-labels .goal{ font-size:.8rem; letter-spacing:.1em; text-transform:uppercase; color:var(--muted); }
+
+  .progress-track{
+    position:relative; height:8px; border-radius:99px; background:rgba(255,255,255,.08);
+    overflow:hidden; margin-bottom:10px;
+  }
+  .progress-fill{
+    position:relative; height:100%; width:0%; border-radius:99px;
+    background:linear-gradient(90deg, #9c7a3a, var(--gold) 60%, var(--gold-soft));
+    transition:width 1.6s cubic-bezier(.22,.9,.3,1);
+    overflow:hidden;
+  }
+  .progress-fill::after{
+    content:''; position:absolute; inset:0;
+    background:linear-gradient(100deg, transparent 30%, rgba(255,255,255,.55) 48%, transparent 66%);
+    background-size:220% 100%;
+    animation:shimmer 2.6s linear infinite;
+  }
+  @keyframes shimmer{ 0%{ background-position:120% 0; } 100%{ background-position:-40% 0; } }
+  .progress-icon{
+    position:absolute; top:50%; width:16px; height:16px;
+    transform:translate(-50%,-50%);
+    animation:glide 3.4s ease-in-out infinite;
+  }
+  @keyframes glide{ 0%,100%{ margin-top:0; } 50%{ margin-top:-3px; } }
+  .progress-note{ font-size:.78rem; color:var(--muted); font-style:italic; font-family:var(--body); }
+
+  .fund-breakdown{
+    list-style:none; margin-top:26px; padding-top:22px;
+    border-top:1px solid var(--navy-line);
+    display:flex; flex-direction:column; gap:12px;
+  }
+  .fund-breakdown li{ display:flex; align-items:baseline; gap:14px; }
+  .fund-pct{
+    font-family:var(--serif); font-style:italic; font-weight:600; color:var(--gold);
+    font-size:1.1rem; min-width:48px; flex-shrink:0;
+  }
+  .fund-label{ font-family:var(--sans); font-size:.84rem; color:var(--cream); opacity:.85; line-height:1.4; }
+
+  .comment-card{
+    background:var(--navy-deep); border:1px solid var(--navy-line); border-radius:6px;
+    padding:clamp(26px,4vw,36px); min-height:190px;
+    display:flex; flex-direction:column; justify-content:center;
+    position:relative;
+  }
+  .comment-card::before{
+    content:'“'; position:absolute; top:10px; left:20px;
+    font-family:var(--serif); font-size:3rem; color:var(--navy-line); line-height:1;
+  }
+  .comment-text{
+    font-family:var(--body); font-style:italic; font-size:1.2rem; line-height:1.6;
+    color:var(--cream); opacity:0; transition:opacity .6s ease; margin-bottom:18px;
+  }
+  .comment-text.show{ opacity:1; }
+  .comment-meta{
+    font-family:var(--sans); font-size:.78rem; letter-spacing:.05em; color:var(--gold-soft);
+    opacity:0; transition:opacity .6s ease;
+  }
+  .comment-meta.show{ opacity:1; }
+  .comment-dots{ display:flex; gap:6px; margin-top:20px; }
+  .comment-dots span{ width:5px; height:5px; border-radius:50%; background:var(--navy-line); transition:background .3s ease; }
+  .comment-dots span.active{ background:var(--gold); }
+
+  /* ============================================
+     REGISTRY
+     ============================================ */
+  .registry{ background:var(--cream); padding:clamp(70px,9vw,110px) 0; }
+  .registry .section-head{ text-align:center; margin-bottom:clamp(36px,5vw,56px); }
+  .registry .section-head h2{
+    font-family:var(--serif); font-style:italic; font-weight:600;
+    font-size:clamp(1.7rem,3.6vw,2.3rem); color:var(--navy-deep);
+  }
+  .registry-cards{
+    display:grid; grid-template-columns:repeat(auto-fit, minmax(230px,1fr));
+    gap:20px; max-width:900px; margin:0 auto;
+  }
+  .rcard{
+    display:block; text-align:center; padding:36px 22px; background:var(--white);
+    border:1px solid #E4DCC8; text-decoration:none; color:var(--ink);
+    transition:transform .3s ease, border-color .3s ease, box-shadow .3s ease;
+  }
+  .rcard:hover{ transform:translateY(-4px); border-color:var(--gold); box-shadow:0 14px 30px -18px rgba(11,21,38,.35); }
+  .rcard__icon{ font-size:1.6rem; margin-bottom:14px; }
+  .rcard__title{ font-family:var(--serif); font-style:italic; font-size:1.15rem; margin-bottom:6px; }
+  .rcard__sub{ font-family:var(--sans); font-size:.78rem; color:var(--muted); letter-spacing:.03em; }
+
+  /* ============================================
+     POSTCARD CTA
+     ============================================ */
+  .postcard{ background:var(--navy-deep); padding:clamp(70px,10vw,120px) 0; text-align:center; color:var(--white); }
+  .postcard__inner{ max-width:640px; margin:0 auto; }
+  .postcard h2{
+    font-family:var(--serif); font-style:italic; font-weight:600;
+    font-size:clamp(1.8rem,4vw,2.5rem); margin-bottom:18px;
+  }
+  .postcard p{
+    font-family:var(--body); font-size:1.2rem; color:var(--cream); opacity:.85; margin-bottom:36px;
+  }
+  .btn-gold{
+    display:inline-flex; align-items:center; gap:10px;
+    background:var(--gold); color:var(--navy-deep); text-decoration:none;
+    font-family:var(--sans); font-weight:600; font-size:.85rem; letter-spacing:.08em; text-transform:uppercase;
+    padding:16px 34px; border-radius:2px; transition:background .3s ease, transform .3s ease;
+  }
+  .btn-gold:hover{ background:var(--gold-soft); transform:translateY(-2px); }
+  .postcard__fineprint{
+    margin-top:22px; font-family:var(--sans); font-size:.75rem; color:var(--muted); font-style:normal;
+  }
+
+  /* ============================================
+     FOOTER
+     ============================================ */
+  .site-footer{
+    background:var(--navy-deep); border-top:1px solid var(--navy-line);
+    padding:40px var(--edge) 32px; text-align:center;
+  }
+  .site-footer p{ font-family:var(--body); font-style:italic; color:var(--cream); opacity:.7; font-size:1rem; }
+  .site-footer .fine{ font-family:var(--sans); color:var(--muted); font-size:.72rem; margin-top:10px; letter-spacing:.04em; }
+</style>
+</head>
+<body>
+
+<!-- ============================================
+     NAV
+     ============================================ -->
+<nav class="nav" id="nav">
+  <span class="nav__name">Asia Mims-Johnson</span>
+  <button class="nav__toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+  <ul class="nav__links" id="navLinks">
+    <li><a href="#journey">The Journey</a></li>
+    <li><a href="#gallery">Gallery</a></li>
+    <li><a href="#support">Support</a></li>
+    <li><a href="#postcard">Send Love</a></li>
+  </ul>
+</nav>
+
+<!-- ============================================
+     HERO
+     Swap images/photo5.jpg for any preferred hero shot.
+     ============================================ -->
+<header class="hero">
+  <img class="hero__img" src="images/photo5.jpg" alt="Asia smiling outdoors in cap and gown" fetchpriority="high">
+  <div class="hero__content">
+    <p class="hero__eyebrow">Class of 2026</p>
+    <h1 class="hero__name">Asia Mims-Johnson</h1>
+    <p class="hero__degrees">Business <span class="dot">·</span> Economics <span class="dot">·</span> Liberal Arts</p>
+    <div class="hero__rule"></div>
+  </div>
+  <div class="scroll-cue" aria-hidden="true"></div>
+</header>
+
+<!-- ============================================
+     INTRO
+     ============================================ -->
+<section class="intro">
+  <div class="wrap intro__inner">
+    <p class="kicker">A Note From Asia</p>
+    <p>Three years, three disciplines, and one degree of persistence — I'm officially graduating with Associate degrees in <em>Business</em>, <em>Economics</em>, and <em>Liberal Arts</em> from Berkeley City College.</p>
+    <p>This page is my way of sharing the journey with the people who made it possible, and pointing you toward the next chapter I'm building.</p>
+  </div>
+</section>
+
+<!-- ============================================
+     JOURNEY — vertical-label sections
+     ============================================ -->
+<section class="journey" id="journey">
+  <div class="wrap">
+
+    <div class="journey-block">
+      <div class="vlabel"><span>The Journey</span></div>
+      <div class="jcontent">
+        <h3>Student · Learner · Dreamer</h3>
+        <p>I came into this chapter wanting more than a diploma — I wanted to understand how businesses run, how economies move, and how to think critically about the world around me. Three degrees later, I've built the kind of foundation I can carry into anything next.</p>
+      </div>
+    </div>
+
+    <div class="journey-block reverse">
+      <div class="vlabel"><span>What's Next</span></div>
+      <div class="jcontent">
+        <h3>Onward &amp; Upward</h3>
+        <p>Graduation isn't the finish line — it's the launch pad. I'm carrying this foundation into my next goals, and I couldn't be more grateful to the people who've cheered me on, shown up for me, and believed in me along the way.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============================================
+     GALLERY
+     Replace/reorder images/photo1.jpg – photo9.jpg as needed.
+     Edit the .cell__title / .cell__cap text to re-caption any photo.
+     Click any photo to view it enlarged (see lightbox at bottom of page).
+     ============================================ -->
+<section class="gallery" id="gallery">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="kicker">In Frame</p>
+      <h2>The Gallery</h2>
+    </div>
+
+    <div class="grid" id="galleryGrid">
+      <figure class="cell cell--a" tabindex="0" role="button" aria-label="View enlarged photo: Cap & Gown">
+        <img src="images/photo1.jpg" alt="Asia posing in cap and gown" loading="lazy">
+        <figcaption class="cell__overlay">
+          <div class="cell__rule"></div>
+          <p class="cell__title">Cap &amp; Gown</p>
+          <p class="cell__cap">The morning it all became real — cap on, tassel swinging, three years of early mornings and late nights finally catching up to this one moment.</p>
+          <p class="cell__zoom">Click to enlarge</p>
+        </figcaption>
+      </figure>
+
+      <figure class="cell cell--b" tabindex="0" role="button" aria-label="View enlarged photo: All Smiles">
+        <img src="images/photo2.jpg" alt="Asia smiling at graduation" loading="lazy">
+        <figcaption class="cell__overlay">
+          <div class="cell__rule"></div>
+          <p class="cell__title">All Smiles</p>
+          <p class="cell__cap">Relief, pride, and pure joy collided the second the ceremony ended — this is what three years of hard work feels like when it finally pays off.</p>
+          <p class="cell__zoom">Click to enlarge</p>
+        </figcaption>
+      </figure>
+
+      <figure class="cell cell--c" tabindex="0" role="button" aria-label="View enlarged photo: Business">
+        <img src="images/photo3.jpg" alt="Asia portrait" loading="lazy">
+        <figcaption class="cell__overlay">
+          <div class="cell__rule"></div>
+          <p class="cell__title">Business</p>
+          <p class="cell__cap">The first of three degrees, earned one late study session at a time — the language of systems and strategy, now second nature.</p>
+          <p class="cell__zoom">Click to enlarge</p>
+        </figcaption>
+      </figure>
+
+      <figure class="cell cell--d" tabindex="0" role="button" aria-label="View enlarged photo: Economics">
+        <img src="images/photo4.jpg" alt="Asia candid photo" loading="lazy">
+        <figcaption class="cell__overlay">
+          <div class="cell__rule"></div>
+          <p class="cell__title">Economics</p>
+          <p class="cell__cap">Understanding how the world actually moves — markets, incentives, decisions — became second nature by the time this degree was done.</p>
+          <p class="cell__zoom">Click to enlarge</p>
+        </figcaption>
+      </figure>
+
+      <figure class="cell cell--e" tabindex="0" role="button" aria-label="View enlarged photo: Liberal Arts">
+        <img src="images/photo6.jpg" alt="Asia portrait outdoors" loading="lazy">
+        <figcaption class="cell__overlay">
+          <div class="cell__rule"></div>
+          <p class="cell__title">Liberal Arts</p>
+          <p class="cell__cap">A broader lens on history, culture, and ideas rounded everything else out — and taught me how to ask better questions.</p>
+          <p class="cell__zoom">Click to enlarge</p>
+        </figcaption>
+      </figure>
+
+      <figure class="cell cell--f" tabindex="0" role="button" aria-label="View enlarged photo: Behind the Scenes">
+        <img src="images/photo7.jpg" alt="Asia candid photo two" loading="lazy">
+        <figcaption class="cell__overlay">
+          <div class="cell__rule"></div>
+          <p class="cell__title">Behind the Scenes</p>
+          <p class="cell__cap">Not every part of this journey made it to a camera roll — the late nights, the rewrites, the almost-quitting moments. This one's for those, too.</p>
+          <p class="cell__zoom">Click to enlarge</p>
+        </figcaption>
+      </figure>
+
+      <figure class="cell cell--g" tabindex="0" role="button" aria-label="View enlarged photo: Standing Tall">
+        <img src="images/photo8.jpg" alt="Asia portrait three" loading="lazy">
+        <figcaption class="cell__overlay">
+          <div class="cell__rule"></div>
+          <p class="cell__title">Standing Tall</p>
+          <p class="cell__cap">Every step it took to get here is folded into this photo — the doubt, the persistence, and finally, the pride.</p>
+          <p class="cell__zoom">Click to enlarge</p>
+        </figcaption>
+      </figure>
+
+      <!-- Newest addition — swap src any time, this is a placeholder pick for now -->
+      <figure class="cell cell--h" tabindex="0" role="button" aria-label="View enlarged photo: One More Moment">
+        <img src="images/photo9.jpg" alt="Asia graduation photo nine" loading="lazy">
+        <figcaption class="cell__overlay">
+          <div class="cell__rule"></div>
+          <p class="cell__title">One More Moment</p>
+          <p class="cell__cap">Just another frame worth keeping from a season I'll never forget.</p>
+          <p class="cell__zoom">Click to enlarge</p>
+        </figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     LIGHTBOX — populated by JS when a gallery photo is clicked
+     ============================================ -->
+<div class="lightbox" id="lightbox" aria-hidden="true">
+  <button class="lightbox__close" id="lightboxClose" aria-label="Close enlarged photo">&times;</button>
+  <button class="lightbox__nav lightbox__nav--prev" id="lightboxPrev" aria-label="Previous photo">&#8249;</button>
+  <img id="lightboxImg" src="" alt="">
+  <button class="lightbox__nav lightbox__nav--next" id="lightboxNext" aria-label="Next photo">&#8250;</button>
+  <p class="lightbox__caption" id="lightboxCaption"></p>
+  <p class="lightbox__counter" id="lightboxCounter"></p>
+</div>
+
+<!-- ============================================
+     SUPPORT — progress bar + comment carousel
+     EDIT RAISED / GOAL amounts in the script below.
+     ============================================ -->
+<section class="support" id="support">
+  <div class="wrap support__grid">
+
+    <div class="support-copy">
+      <p class="kicker support__eyebrow">Support the Journey</p>
+      <h2>Every bit helps launch the next chapter.</h2>
+      <p>If you'd like to celebrate with a gift, here's where things stand right now — and thank you, truly, for being part of this.</p>
+
+      <div class="progress-labels">
+        <div class="raised" id="raisedLabel">$0 <span>raised</span></div>
+        <div class="goal" id="goalLabel">of $0 goal</div>
+      </div>
+      <div class="progress-track">
+        <div class="progress-fill" id="progressFill">
+          <svg class="progress-icon" id="progressIcon" viewBox="0 0 24 24" fill="none" style="left:0%;">
+            <path d="M12 3L2 8l10 5 8-4.09V17h2V8L12 3z" fill="#0B1526"/>
+            <path d="M6 10.5V15c0 1.5 2.7 3 6 3s6-1.5 6-3v-4.5l-6 3-6-3z" fill="#0B1526"/>
+          </svg>
+        </div>
+      </div>
+      <p class="progress-note">Updated manually by Asia — thank you for every bit of it.</p>
+
+      <ul class="fund-breakdown">
+        <li><span class="fund-pct">25%</span><span class="fund-label">Flight school — helping young aspiring pilots train</span></li>
+        <li><span class="fund-pct">25%</span><span class="fund-label">MAJ Mindset LLC — investing in my business</span></li>
+        <li><span class="fund-pct">50%</span><span class="fund-label">Rent — roughly two months, post-graduation</span></li>
+      </ul>
+    </div>
+
+    <div class="comment-card">
+      <p class="comment-text" id="commentText"></p>
+      <p class="comment-meta" id="commentMeta"></p>
+      <div class="comment-dots" id="commentDots"></div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============================================
+     REGISTRY
+     ============================================ -->
+<section class="registry">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="kicker">Ways to Celebrate</p>
+      <h2>A Gift, If You're Moved To</h2>
+    </div>
+    <div class="registry-cards">
+      <!-- Swap href for your real Amazon Wishlist link -->
+      <a class="rcard" href="YOUR_AMAZON_WISHLIST_LINK" target="_blank" rel="noopener">
+        <div class="rcard__icon">🎁</div>
+        <div class="rcard__title">Wishlist</div>
+        <div class="rcard__sub">View on Amazon</div>
+      </a>
+      <!-- Swap href for your real Venmo/PayPal/BuyMeACoffee link -->
+      <a class="rcard" href="YOUR_VENMO_OR_PAYPAL_LINK" target="_blank" rel="noopener">
+        <div class="rcard__icon">💛</div>
+        <div class="rcard__title">Send a Gift</div>
+        <div class="rcard__sub">Venmo / PayPal</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     POSTCARD CTA — Google Form link
+     Replace YOUR_GOOGLE_FORM_LINK below with your real form URL.
+     ============================================ -->
+<section class="postcard" id="postcard">
+  <div class="wrap postcard__inner">
+    <h2>Send a Keepsake Postcard</h2>
+    <p>Drop your mailing address, a note, and let me know how you'd like your message shared — public, anonymous, or just for me.</p>
+    <a class="btn-gold" href="https://docs.google.com/forms/d/e/1FAIpQLSdJiMaoMvqwrmsDWlgFafbHXYDoUYavgoQJQWI4NBwNCMNJ-w/viewform" target="_blank" rel="noopener">
+      Open the Form →
+    </a>
+    <p class="postcard__fineprint">Takes about a minute. Your address is only ever used to mail you a keepsake postcard.</p>
+  </div>
+</section>
+
+<!-- ============================================
+     FOOTER
+     ============================================ -->
+<footer class="site-footer">
+  <p>With so much gratitude — Asia</p>
+  <p class="fine">Class of 2026 · Berkeley City College</p>
+</footer>
+
+<script>
+/* ============================================
+   EDITABLE SETTINGS
+   ============================================ */
+
+// --- Donation tracker: edit these two numbers any time ---
+const RAISED_AMOUNT = 250;   // <-- current amount raised
+const GOAL_AMOUNT   = 5000;  // <-- overall goal
+
+// --- Congratulatory comments ---
+// visibility: "public"    -> show real name + relation
+// visibility: "anonymous" -> mask name, show "A [Relation]"
+// visibility: "private"   -> NEVER put private-to-Asia messages here.
+//              Those live only in your Google Sheet form responses.
+const comments = [
+  { name: "Aunt Sarah",   relation: "Relative",     text: "So incredibly proud of you, Asia! Can't wait to see what you do next.", visibility: "public" },
+  { name: "Marcus",       relation: "Close Friend",  text: "Cheers to the graduate! Best of luck on the next chapter.", visibility: "anonymous" },
+  { name: "The Johnsons", relation: "Framily",       text: "Congratulations! Sending you so much love and support.", visibility: "public" },
+  { name: "Kema",         relation: "Supporter",     text: "Watching you finish this out has been so inspiring. Well done!", visibility: "anonymous" }
+];
+
+/* ============================================
+   NAV — scroll state + mobile toggle
+   ============================================ */
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => {
+  nav.classList.toggle('scrolled', window.scrollY > 40);
+}, { passive:true });
+
+const navToggle = document.getElementById('navToggle');
+const navLinks = document.getElementById('navLinks');
+navToggle.addEventListener('click', () => {
+  const open = navLinks.classList.toggle('open');
+  navToggle.setAttribute('aria-expanded', open);
+});
+navLinks.querySelectorAll('a').forEach(a => {
+  a.addEventListener('click', () => {
+    navLinks.classList.remove('open');
+    navToggle.setAttribute('aria-expanded', false);
+  });
+});
+
+/* ============================================
+   LIGHTBOX — click any gallery photo to enlarge,
+   then click through the rest like a carousel
+   ============================================ */
+const lightbox = document.getElementById('lightbox');
+const lightboxImg = document.getElementById('lightboxImg');
+const lightboxClose = document.getElementById('lightboxClose');
+const lightboxPrev = document.getElementById('lightboxPrev');
+const lightboxNext = document.getElementById('lightboxNext');
+const lightboxCaption = document.getElementById('lightboxCaption');
+const lightboxCounter = document.getElementById('lightboxCounter');
+let lastFocused = null;
+let currentIndex = 0;
+
+const galleryItems = Array.from(document.querySelectorAll('#galleryGrid .cell')).map(cell => {
+  const img = cell.querySelector('img');
+  const title = cell.querySelector('.cell__title');
+  return { src: img.src, alt: img.alt, title: title ? title.textContent : '' };
+});
+
+function renderLightbox(){
+  const item = galleryItems[currentIndex];
+  lightboxImg.src = item.src;
+  lightboxImg.alt = item.alt;
+  lightboxCaption.textContent = item.title;
+  lightboxCounter.textContent = `${currentIndex + 1} / ${galleryItems.length}`;
+}
+
+function openLightbox(index){
+  lastFocused = document.activeElement;
+  currentIndex = index;
+  renderLightbox();
+  lightbox.classList.add('open');
+  lightbox.setAttribute('aria-hidden', 'false');
+  document.body.style.overflow = 'hidden';
+  lightboxClose.focus();
+}
+
+function closeLightbox(){
+  lightbox.classList.remove('open');
+  lightbox.setAttribute('aria-hidden', 'true');
+  document.body.style.overflow = '';
+  if (lastFocused) lastFocused.focus();
+}
+
+function showNext(){
+  currentIndex = (currentIndex + 1) % galleryItems.length;
+  renderLightbox();
+}
+function showPrev(){
+  currentIndex = (currentIndex - 1 + galleryItems.length) % galleryItems.length;
+  renderLightbox();
+}
+
+document.querySelectorAll('#galleryGrid .cell').forEach((cell, i) => {
+  cell.addEventListener('click', () => openLightbox(i));
+  cell.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      openLightbox(i);
+    }
+  });
+});
+
+lightboxClose.addEventListener('click', closeLightbox);
+lightboxNext.addEventListener('click', showNext);
+lightboxPrev.addEventListener('click', showPrev);
+lightbox.addEventListener('click', (e) => {
+  if (e.target === lightbox) closeLightbox();
+});
+document.addEventListener('keydown', (e) => {
+  if (!lightbox.classList.contains('open')) return;
+  if (e.key === 'Escape') closeLightbox();
+  if (e.key === 'ArrowRight') showNext();
+  if (e.key === 'ArrowLeft') showPrev();
+});
+
+/* ============================================
+   PROGRESS BAR
+   ============================================ */
+const pct = Math.max(0, Math.min(100, (RAISED_AMOUNT / GOAL_AMOUNT) * 100));
+document.getElementById('raisedLabel').innerHTML = `$${RAISED_AMOUNT.toLocaleString()} <span>raised</span>`;
+document.getElementById('goalLabel').textContent = `of $${GOAL_AMOUNT.toLocaleString()} goal`;
+
+const fillEl = document.getElementById('progressFill');
+const iconEl = document.getElementById('progressIcon');
+const supportSection = document.getElementById('support');
+let animated = false;
+
+function animateProgress(){
+  if (animated) return;
+  animated = true;
+  requestAnimationFrame(() => {
+    fillEl.style.width = pct + '%';
+    iconEl.style.left = '100%';
+  });
+}
+
+const io = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) animateProgress(); });
+}, { threshold:0.4 });
+io.observe(supportSection);
+
+/* ============================================
+   COMMENT CAROUSEL — with privacy filtering
+   ============================================ */
+const publicComments = comments.filter(c => c.visibility !== 'private');
+
+function displayName(c){
+  if (c.visibility === 'anonymous') {
+    return `A ${c.relation}`;
+  }
+  return `${c.name} · ${c.relation}`;
+}
+
+const commentTextEl = document.getElementById('commentText');
+const commentMetaEl = document.getElementById('commentMeta');
+const dotsWrap = document.getElementById('commentDots');
+
+publicComments.forEach((_, i) => {
+  const dot = document.createElement('span');
+  if (i === 0) dot.classList.add('active');
+  dotsWrap.appendChild(dot);
+});
+const dots = dotsWrap.querySelectorAll('span');
+
+let idx = 0;
+const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+function showComment(i){
+  const c = publicComments[i];
+  if (!c) return;
+  commentTextEl.classList.remove('show');
+  commentMetaEl.classList.remove('show');
+  setTimeout(() => {
+    commentTextEl.textContent = `"${c.text}"`;
+    commentMetaEl.textContent = displayName(c);
+    commentTextEl.classList.add('show');
+    commentMetaEl.classList.add('show');
+  }, reduceMotion ? 0 : 300);
+  dots.forEach((d, di) => d.classList.toggle('active', di === i));
+}
+
+if (publicComments.length){
+  showComment(0);
+  if (!reduceMotion && publicComments.length > 1){
+    setInterval(() => {
+      idx = (idx + 1) % publicComments.length;
+      showComment(idx);
+    }, 5000);
+  }
+}
+</script>
+
+</body>
+</html>
