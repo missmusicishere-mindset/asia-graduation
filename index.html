@@ -408,6 +408,18 @@
   }
   .fund-label{ font-family:var(--sans); font-size:.84rem; color:var(--cream); opacity:.85; line-height:1.4; }
 
+  .fund-learn-more{
+    display:inline-block; margin-top:18px;
+    font-family:var(--sans); font-size:.78rem; letter-spacing:.04em;
+    color:var(--gold-soft); text-decoration:none;
+    border-bottom:1px solid rgba(232,217,181,.35);
+    padding-bottom:2px; transition:color .25s ease, border-color .25s ease;
+  }
+  .fund-learn-more:hover{ color:var(--white); border-color:var(--gold); }
+
+  .fund-link{ color:var(--gold-soft); text-decoration:underline; text-underline-offset:2px; }
+  .fund-link:hover{ color:var(--white); }
+
   .comment-card{
     background:var(--navy-deep); border:1px solid var(--navy-line); border-radius:6px;
     padding:clamp(26px,4vw,36px); min-height:190px;
@@ -695,10 +707,24 @@
       <p class="progress-note">Updated manually by Asia — thank you for every bit of it.</p>
 
       <ul class="fund-breakdown">
-        <li><span class="fund-pct">25%</span><span class="fund-label">Flight school — helping young aspiring pilots train</span></li>
-        <li><span class="fund-pct">25%</span><span class="fund-label">MAJ Mindset LLC — investing in my business</span></li>
-        <li><span class="fund-pct">50%</span><span class="fund-label">Rent — roughly two months, post-graduation</span></li>
+        <li>
+          <span class="fund-pct">25%</span>
+          <span class="fund-label">Donated to a flight school scholarship fund</span>
+        </li>
+        <li>
+          <span class="fund-pct">25%</span>
+          <span class="fund-label">Invested into my business, <a href="https://majmindset.com" target="_blank" rel="noopener" class="fund-link">MAJ Mindset LLC</a></span>
+        </li>
+        <li>
+          <span class="fund-pct">50%</span>
+          <span class="fund-label">Used for living expenses while I pursue further education and work experience</span>
+        </li>
       </ul>
+
+      <!-- Swap href for your real GoFundMe / DonorBox link once it's live -->
+      <a class="fund-learn-more" href="YOUR_FLIGHT_FUND_LINK" target="_blank" rel="noopener">
+        Learn more about the Valimar Jr. V2 Flight Fund →
+      </a>
     </div>
 
     <div class="comment-card">
