@@ -499,6 +499,14 @@
   }
   .site-footer p{ font-family:var(--body); font-style:italic; color:var(--cream); opacity:.7; font-size:1rem; }
   .site-footer .fine{ font-family:var(--sans); color:var(--muted); font-size:.72rem; margin-top:10px; letter-spacing:.04em; }
+  .footer-links{ margin-top:8px; }
+  .footer-links a{
+    color:var(--gold-soft); text-decoration:none;
+    border-bottom:1px solid rgba(232,217,181,.3);
+    padding-bottom:1px; transition:color .25s ease, border-color .25s ease;
+  }
+  .footer-links a:hover{ color:var(--white); border-color:var(--gold); }
+  .footer-links .dot{ color:var(--muted); margin:0 8px; }
 </style>
 </head>
 <body>
@@ -783,6 +791,11 @@
 <footer class="site-footer">
   <p>With so much gratitude — Asia</p>
   <p class="fine">Class of 2026 · Berkeley City College</p>
+  <p class="fine footer-links">
+    <a href="https://www.asiaismaj.com" target="_blank" rel="noopener">asiaismaj.com</a>
+    <span class="dot">·</span>
+    <a href="https://majmindset.com" target="_blank" rel="noopener">majmindset.com</a>
+  </p>
 </footer>
 
 <script>
