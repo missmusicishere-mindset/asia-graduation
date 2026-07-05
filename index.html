@@ -248,11 +248,11 @@
   .cell--a{ grid-column:span 3; grid-row:span 3; }
   .cell--b{ grid-column:span 3; grid-row:span 2; }
   .cell--c{ grid-column:span 2; grid-row:span 2; }
-  .cell--d{ grid-column:span 4; grid-row:span 2; }
+  .cell--d{ grid-column:span 2; grid-row:span 3; }
   .cell--e{ grid-column:span 2; grid-row:span 2; }
   .cell--f{ grid-column:span 2; grid-row:span 2; }
   .cell--g{ grid-column:span 3; grid-row:span 3; }
-  .cell--h{ grid-column:span 3; grid-row:span 2; }
+  .cell--h{ grid-column:span 2; grid-row:span 3; }
 
   .cell__overlay{
     position:absolute; inset:0;
@@ -416,6 +416,9 @@
     padding-bottom:2px; transition:color .25s ease, border-color .25s ease;
   }
   .fund-learn-more:hover{ color:var(--white); border-color:var(--gold); }
+
+  .fund-link{ color:var(--gold-soft); text-decoration:underline; text-underline-offset:2px; }
+  .fund-link:hover{ color:var(--white); }
 
   .comment-card{
     background:var(--navy-deep); border:1px solid var(--navy-line); border-radius:6px;
@@ -582,7 +585,7 @@
 
     <div class="grid" id="galleryGrid">
       <figure class="cell cell--a" tabindex="0" role="button" aria-label="View enlarged photo: Cap & Gown">
-        <img src="images/photo1.jpg" alt="Asia posing in cap and gown" loading="lazy">
+        <img src="images/photo1.jpg" alt="Asia posing in cap and gown" loading="lazy" style="object-position:center 18%;">
         <figcaption class="cell__overlay">
           <div class="cell__rule"></div>
           <p class="cell__title">Cap &amp; Gown</p>
@@ -592,7 +595,7 @@
       </figure>
 
       <figure class="cell cell--b" tabindex="0" role="button" aria-label="View enlarged photo: All Smiles">
-        <img src="images/photo2.jpg" alt="Asia smiling at graduation" loading="lazy">
+        <img src="images/photo2.jpg" alt="Asia smiling at graduation" loading="lazy" style="object-position:center 35%;">
         <figcaption class="cell__overlay">
           <div class="cell__rule"></div>
           <p class="cell__title">All Smiles</p>
@@ -602,7 +605,7 @@
       </figure>
 
       <figure class="cell cell--c" tabindex="0" role="button" aria-label="View enlarged photo: Business">
-        <img src="images/photo3.jpg" alt="Asia portrait" loading="lazy">
+        <img src="images/photo3.jpg" alt="Asia portrait" loading="lazy" style="object-position:center 30%;">
         <figcaption class="cell__overlay">
           <div class="cell__rule"></div>
           <p class="cell__title">Business</p>
@@ -612,7 +615,7 @@
       </figure>
 
       <figure class="cell cell--d" tabindex="0" role="button" aria-label="View enlarged photo: Economics">
-        <img src="images/photo4.jpg" alt="Asia candid photo" loading="lazy">
+        <img src="images/photo4.jpg" alt="Asia candid photo" loading="lazy" style="object-position:center 15%;">
         <figcaption class="cell__overlay">
           <div class="cell__rule"></div>
           <p class="cell__title">Economics</p>
@@ -622,7 +625,7 @@
       </figure>
 
       <figure class="cell cell--e" tabindex="0" role="button" aria-label="View enlarged photo: Liberal Arts">
-        <img src="images/photo6.jpg" alt="Asia portrait outdoors" loading="lazy">
+        <img src="images/photo6.jpg" alt="Asia portrait outdoors" loading="lazy" style="object-position:center 40%;">
         <figcaption class="cell__overlay">
           <div class="cell__rule"></div>
           <p class="cell__title">Liberal Arts</p>
@@ -632,7 +635,7 @@
       </figure>
 
       <figure class="cell cell--f" tabindex="0" role="button" aria-label="View enlarged photo: Behind the Scenes">
-        <img src="images/photo7.jpg" alt="Asia candid photo two" loading="lazy">
+        <img src="images/photo7.jpg" alt="Asia candid photo two" loading="lazy" style="object-position:center 40%;">
         <figcaption class="cell__overlay">
           <div class="cell__rule"></div>
           <p class="cell__title">Behind the Scenes</p>
@@ -642,7 +645,7 @@
       </figure>
 
       <figure class="cell cell--g" tabindex="0" role="button" aria-label="View enlarged photo: Standing Tall">
-        <img src="images/photo8.jpg" alt="Asia portrait three" loading="lazy">
+        <img src="images/photo8.jpg" alt="Asia portrait three" loading="lazy" style="object-position:center 15%;">
         <figcaption class="cell__overlay">
           <div class="cell__rule"></div>
           <p class="cell__title">Standing Tall</p>
@@ -653,7 +656,7 @@
 
       <!-- Newest addition — swap src any time, this is a placeholder pick for now -->
       <figure class="cell cell--h" tabindex="0" role="button" aria-label="View enlarged photo: One More Moment">
-        <img src="images/photo9.jpg" alt="Asia graduation photo nine" loading="lazy">
+        <img src="images/photo9.jpg" alt="Asia graduation photo nine" loading="lazy" style="object-position:center 18%;">
         <figcaption class="cell__overlay">
           <div class="cell__rule"></div>
           <p class="cell__title">One More Moment</p>
@@ -703,21 +706,26 @@
       </div>
       <p class="progress-note">Updated manually by Asia — thank you for every bit of it.</p>
 
-     <ul class="fund-breakdown">
-  <li>
-    <span class="fund-pct">25%</span>
-    <span class="fund-label">Donated to a flight school scholarship fund. Supporting people who want a career in aviation</span>
-  </li>
-  <li>
-    <span class="fund-pct">25%</span>
-    <span class="fund-label">Invested into my business, <a href="https://majmindset.com" target="_blank" rel="noopener" class="fund-link">MAJ Mindset LLC</a></span>
-  </li>
-  <li>
-    <span class="fund-pct">50%</span>
-    <span class="fund-label">Used for living expenses while I pursue further education and work experience</span>
-  </li>
-</ul>
+      <ul class="fund-breakdown">
+        <li>
+          <span class="fund-pct">25%</span>
+          <span class="fund-label">Donated to a flight school scholarship fund</span>
+        </li>
+        <li>
+          <span class="fund-pct">25%</span>
+          <span class="fund-label">Invested into my business, <a href="https://majmindset.com" target="_blank" rel="noopener" class="fund-link">MAJ Mindset LLC</a></span>
+        </li>
+        <li>
+          <span class="fund-pct">50%</span>
+          <span class="fund-label">Used for living expenses while I pursue further education and work experience</span>
+        </li>
+      </ul>
 
+      <!-- Swap href for your real GoFundMe / DonorBox link once it's live -->
+      <a class="fund-learn-more" href="YOUR_FLIGHT_FUND_LINK" target="_blank" rel="noopener">
+        Learn more about the Valimar Jr. V2 Flight Fund →
+      </a>
+    </div>
 
     <div class="comment-card">
       <p class="comment-text" id="commentText"></p>
